@@ -1,0 +1,118 @@
+﻿@{
+    ViewBag.Title = "Avaliação Apisul";
+}
+
+<div class="container font-style">
+    <div>
+        <div>
+            <p>
+                <h5>ANDARES MENOS UTILIZADOS</h5>
+            </p>
+
+            @foreach (var item in ViewBag.ListaAndarMenosUtilizado)
+            {
+                <p>
+                    Andar : <strong>@item</strong>º
+                </p>
+            }
+        </div>
+    </div>
+    <div>
+        <div>
+            <p>
+                <h5>ELEVADO MAIS FREQUENTADO </h5>
+            </p>
+
+            @foreach (var item in ViewBag.ListaElevadorMaisUtilizado)
+            {
+                <p>
+                    Elevador : <strong>@item</strong>
+                </p>
+            }
+        </div>
+    </div>
+    <div>
+        <div>
+            <p>
+                <h5>ELEVADOR MENOS FREQUENTADO </h5>
+            </p>
+
+            @foreach (var item in ViewBag.ListaElevadorMenosUtilizado)
+            {
+                <p>
+                    Elevador : <strong>@item</strong>
+                </p>
+            }
+        </div>
+    </div>
+    <div>
+        <div>
+            <p>
+                <h5>PERIODO DO FLUXO ELEVADOR MAIS FREQUENTADO</h5>
+            </p>
+
+            @foreach (var item in ViewBag.ListaPeriodoMaiorFluxoElevadorMaisFrequentado)
+            {
+                <p>
+                    Periodo : <strong>@item</strong>
+                </p>
+            }
+        </div>
+    </div>
+    <div>
+        <div>
+            <p>
+                <h5>PERIODO DO FLUXO ELEVADOR MENOS FREQUANTADO </h5>
+            </p>
+
+            @foreach (var item in ViewBag.ListaPeriodoMaiorFluxoElevadorMenosFrequentado)
+            {
+                <p>
+                    Periodo : <strong>@item</strong>
+                </p>
+            }
+        </div>
+    </div>
+    <div>
+        <div>
+            <p>
+                <h5>PERIODO MAIOR ULTILIZAÇÃO TODOS OS ELEVADORES</h5>
+            </p>
+
+            @foreach (var item in ViewBag.ListaPeriodoMaiorMaiorUltilizacaoAmbosElevadores)
+            {
+                <p>
+                    Periodo : <strong>@item</strong>
+                </p>
+            }
+        </div>
+    </div>
+    <div>
+        <div>
+            <p>
+                <h5>PERCENTUAL DE USO POR ELEVADOR</h5>
+            </p>
+            <p>
+                Elevador <strong>A</strong>: @ViewData["percentualA"]%
+            </p>
+            <p>
+                Elevador <strong>B</strong>: @ViewData["percentualB"]%
+            </p>
+            <p>
+                Elevador <strong>C</strong>: @ViewData["percentualC"]%
+            </p>
+            <p>
+                Elevador <strong>D</strong>: @ViewData["percentualD"]%
+            </p>
+            <p>
+                Elevador <strong>E</strong>: @ViewData["percentualE"]%
+            </p>
+        </div>
+    </div>
+</div>
+
+<style>
+    .font-style {
+        font-family: Arial, Helvetica, sans-serif;
+    }
+</style>
