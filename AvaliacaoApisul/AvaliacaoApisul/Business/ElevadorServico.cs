@@ -125,12 +125,12 @@ namespace AvaliacaoApisul.Business
         private List<char> GetPeriodoDeMenorFluxoElevadorMenosFrequentado(string path)
         {
 
-            var periodoMenorFluxiMaisUtilizado = Readfile(path).GroupBy(e => e.Elevador)
+            var periodoMenorFluxoMaisUtilizado = Readfile(path).GroupBy(e => e.Elevador)
                                                                .SelectMany(e => e.OrderBy(x => x.Turno))
                                                                .Select(r => new { turno = r.Turno })
                                                                .ToList();
 
-            return periodoMenorFluxiMaisUtilizado.GroupBy(a => a.turno)
+            return periodoMenorFluxoMaisUtilizado.GroupBy(a => a.turno)
                                                  .OrderBy(e => e.Count())
                                                  .First()
                                                  .Select(a => a.turno)
@@ -140,12 +140,12 @@ namespace AvaliacaoApisul.Business
 
         private List<char> GetPeriodoDeMaioFluxoElevadorMaisFrequentado(string path)
         {
-            var periodoMaiorFluxiMaisUtilizado = Readfile(path).GroupBy(e => e.Elevador)
+            var periodoMaiorFluxoMaisUtilizado = Readfile(path).GroupBy(e => e.Elevador)
                                                                .SelectMany(e => e.OrderBy(x => x.Turno))
                                                                .Select(r => new { turno = r.Turno })
                                                                .ToList();
 
-            return periodoMaiorFluxiMaisUtilizado.GroupBy(a => a.turno)
+            return periodoMaiorFluxoMaisUtilizado.GroupBy(a => a.turno)
                                                  .OrderByDescending(e => e.Count())
                                                  .First()
                                                  .Select(a => a.turno)
